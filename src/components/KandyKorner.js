@@ -5,7 +5,9 @@ import { LocationProvider } from "./locations/LocationProvider"
 import ProductList from './products/ProductList'
 import { ProductProvider } from './products/ProductProvider'
 import { ProductTypeProvider } from './products/ProductTypeProvider'
-
+import EmployeeList from './employees/EmployeeList'
+import { EmployeeProvider } from './employees/EmployeeProvider'
+import "./employees/Employees.css"
 export default () => (
     <>
         <h2>Kandy Korner</h2>
@@ -20,16 +22,23 @@ export default () => (
         <h2>Locations</h2>
         
         <LocationProvider>
-            <LocationList />
         </LocationProvider>
        
        <h2>Products</h2>
+        
 
+        <LocationProvider>
          <ProductProvider>
             <ProductTypeProvider>
+              <EmployeeProvider>
+                <LocationList />
                 <ProductList />
+                <EmployeeList />
+              </EmployeeProvider>
             </ProductTypeProvider>
          </ProductProvider>
+        </LocationProvider>
+         
 
        
        
