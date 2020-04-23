@@ -18,7 +18,7 @@ export const ProductProvider = (props) => {
             .then(setProducts) //use state line 13
     }
 
-    const addProducts = product => {
+    const addProduct = product => {
         return fetch("http://localhost:8088/products", {
             method: "POST",
             headers: {
@@ -43,7 +43,7 @@ export const ProductProvider = (props) => {
 
     return (
         <ProductContext.Provider value={{
-            products, addProducts //addProducts line 21
+            products, addProduct //addProducts line 21
         }}>
             {props.children}
         </ProductContext.Provider>
