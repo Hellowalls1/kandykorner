@@ -4,7 +4,7 @@ import { LocationContext } from "../locations/LocationProvider"
 import "./Employees.css"
 
 export default props => {
-    const { addEmployee } = useContext(EmployeeContext)
+    const { addEmployees } = useContext(EmployeeContext)
     const { locations } = useContext(LocationContext)
 
 
@@ -32,7 +32,7 @@ export default props => {
             //addEmployee is the defined variable to represent the POST function in the employee data provider 
             //these can't be used unless there is a reference established
 
-            addEmployee({
+            addEmployees({
                 name: name.current.value,
                 locationId: locationId,
                 manager: manager.current.checked,
