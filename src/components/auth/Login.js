@@ -1,13 +1,9 @@
-
 import React, { useRef } from "react"
-import "./Login.css"
 
 
 const Login = props => {
     const email = useRef()
     const password = useRef()
-    const customerName = useRef()
-    const address = useRef()
 
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/customers?email=${email.current.value}`)
@@ -37,7 +33,7 @@ const Login = props => {
     }
 
     return (
-        <main className="container--login">
+        <div className="container--login">
             <form className="form--login" onSubmit={handleLogin}>
                 <h2>Please sign in</h2>
                 <fieldset>
@@ -62,8 +58,8 @@ const Login = props => {
                     </button>
                 </fieldset>
             </form>
-        </main>
+        </div>
     )
 }
-
 export default Login
+

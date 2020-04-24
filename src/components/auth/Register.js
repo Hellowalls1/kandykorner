@@ -1,7 +1,5 @@
-
-
 import React, { useRef } from "react"
-import "./Login.css"
+
 
 const Register = props => {
     const firstName = useRef()
@@ -24,8 +22,6 @@ const Register = props => {
     const handleRegister = (e) => {
         e.preventDefault()
 
-        //creating the user
-
         if (password.current.value === verifyPassword.current.value) {
             existingUserCheck()
                 .then(() => {
@@ -40,14 +36,11 @@ const Register = props => {
                             name: `${firstName.current.value} ${lastName.current.value}`
                         })
                     })
-
-                    // after you create the user you put their id in local storage then toggle the object via props line 4
-
                         .then(_ => _.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 localStorage.setItem("kandy_customer", createdUser.id)
-                                props.toggle() //line 4
+                                props.toggle()
                             }
                         })
                 })
@@ -57,7 +50,7 @@ const Register = props => {
     }
 
     return (
-        <main className="container--login">
+        <div className="container--login">
             <form className="form--register" onSubmit={handleRegister}>
                 <h4 className="darkgray">If you are not a customer yet, please register a new account</h4>
                 <fieldset>
@@ -102,12 +95,13 @@ const Register = props => {
                 </fieldset>
                 <fieldset>
                     <button type="submit">
-                        Sign in
+                        Register
                     </button>
                 </fieldset>
             </form>
-        </main>
+        </div>
     )
 }
 
 export default Register
+
