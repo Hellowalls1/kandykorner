@@ -18,7 +18,7 @@ export const CustomerProvider = (props) => {
             .then(setCustomers) //use state line 13
     }
 
-    const addCustomers = location => {
+    const addCustomers = customer => {
         return fetch("http://localhost:8088/customers", {
             method: "POST",
             headers: {

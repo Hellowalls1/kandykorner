@@ -29,7 +29,7 @@ export default () => {
                 {
                     employees.map(employee => {
                         const loc = locations.find(l => l.id === employee.locationId)
-
+                        
                         return <Employee key={employee.id} location={loc} employee={employee} />
                     })
                 }

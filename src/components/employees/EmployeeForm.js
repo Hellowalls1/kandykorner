@@ -34,7 +34,7 @@ export default props => {
 
             addEmployees({
                 name: name.current.value,
-                locationId: locationId, //lcationId and hourlyRate are redifined because they are integers
+                locationId: locationId, //lcationId and hourlyRate are redifined because they need to be parsed to be submitted since everything coming off the DOM is a string
                 manager: manager.current.checked,
                 fullTime: fullTime.current.checked,
                 hourlyRate: hourlyRate 
