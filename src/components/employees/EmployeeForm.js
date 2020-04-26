@@ -12,7 +12,7 @@ export default props => {
     // it is then getting stored into a new variable lines 14-19
     // then the variable is getting called in the addEmployee() function so that a value can be passed into the api
 
-    //reference to each input field
+    //reference to each input field in the form 
     const name = useRef()
     const location = useRef()
     const manager = useRef()
@@ -21,7 +21,7 @@ export default props => {
 
     //parseInt because everything must becaues data from the DOM is in a string and must be converted to a integer
     const constructNewEmployee = () => {
-        const locationId = parseInt(location.current.value)
+        const locationId = parseInt(location.current.value) 
         const hourlyRate = parseInt(rate.current.value)
         //locationId === 0 is the "choose" message that is displaying 
         if (locationId === 0) {
@@ -34,10 +34,10 @@ export default props => {
 
             addEmployees({
                 name: name.current.value,
-                locationId: locationId,
+                locationId: locationId, //lcationId and hourlyRate are redifined because they are integers
                 manager: manager.current.checked,
                 fullTime: fullTime.current.checked,
-                hourlyRate: hourlyRate //line 19
+                hourlyRate: hourlyRate 
             })
             .then(props.toggler)
         }
@@ -70,9 +70,13 @@ export default props => {
                         id="employeeLocation"
                         className="form-control"
                     >
+                        {/* mapping over the locations and converting each location into an option 
+                        element with the {e.name} as the text that appears and the {e.id} as the value of the 
+                        option */}
+
                         <option value="0">Select a location</option>
                         {locations.map(e => (
-                            <option key={e.id} value={e.id}>
+                            <option key={e.id} value={e.id}> 
                                 {e.name}
                             </option>
                         ))}
@@ -129,7 +133,7 @@ export default props => {
                 onClick={
                     evt => {
                         evt.preventDefault() // Prevent browser from submitting the form
-                        constructNewEmployee()
+                        constructNewEmployee() //rather than submit the form please construct a new employee on line 23 when the user clicks on submit button
                     }
                 }
                 className="btn btn-primary">
