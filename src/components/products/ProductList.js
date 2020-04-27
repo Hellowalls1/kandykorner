@@ -1,8 +1,7 @@
-import React, { useContext } from "react"
+import React, { useContext,  } from "react"
 import "./Products.css"
 import { ProductContext } from "./ProductProvider" //importing context object from Provider
 import { ProductTypeContext } from "./ProductTypeProvider"
-
 import Product from "./Product"
 
 export default () => {
@@ -11,9 +10,12 @@ export default () => {
     /* use the .map() array method to iterate the array of products and generate HTML for each one by invoking the product component function */
     const { products } = useContext(ProductContext) //array of products from the data provider
     const { productTypes } = useContext(ProductTypeContext)
-   
+ 
+  
     return (
         <div className="products">
+            
+           
 
         {
             products.map(product => {
