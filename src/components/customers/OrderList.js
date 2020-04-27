@@ -29,11 +29,13 @@ export default () => {
         orders.map(ord => {
             const matchingCandyInfo = products.find(p => p.id === ord.productId)
         
-        return <Order key={ord.id}
+        return <CustomerOrder key={ord.id}
 
         candy={matchingCandyInfo}
         
-        order={ord} />
+        order={ord} 
+  
+        />
     })
 }
     </div>    
