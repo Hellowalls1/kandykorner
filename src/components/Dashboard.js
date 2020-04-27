@@ -39,14 +39,7 @@ export default () => (
                   <h2>Products</h2>
                 <ProductList />
                 <EmployeeList />
-                <Modal isOpen={modal} toggle={toggle}>
-                  <ModalHeader toggle={toggle}>
-                      Order:
-                      </ModalHeader>
-                       <ModalBody>
-                      <OrderList toggle={toggle} />
-                      </ModalBody>
-                      </Modal>
+               
               </EmployeeProvider>
             </ProductTypeProvider>
          </ProductProvider>
